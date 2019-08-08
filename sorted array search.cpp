@@ -1,0 +1,45 @@
+#include<iostream>
+#include <fstream>
+#include <string>
+
+using namespace std;
+
+int main()
+{
+   int a[20],l,h,mid,key,n,i,j,t,o[10];
+   string inFileName = "testcase.txt";
+    ifstream inFile;
+    inFile.open(inFileName.c_str());
+     inFile >> t;
+   //cin>>t;
+
+   for(i=0;i<t;i++)
+   {
+    inFile >> n;
+    inFile >> key;
+      //cin>>n>>key;
+      l=0;h=n-1;
+      for(j=0;j<n;j++)
+      {
+          inFile >> a[j];
+       // cin>>a[j];
+        }
+        while(l<=h)
+        {
+             mid=(l+h)/2;
+             if(a[mid]==key)
+             {o[i]=1;break;}
+             else
+             {
+                if(key>a[mid])l=mid+1;
+                else h=mid-1;
+             }
+             o[i]=-1;
+        }
+    }
+    for(i=0;i<t;i++)
+        {
+           cout<<o[i]<<endl;
+        }
+        return 0;
+}
