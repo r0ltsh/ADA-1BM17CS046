@@ -12,8 +12,7 @@ void dfs(int v)
         if(adj[v][i]==1 && arr[i]==0)
             dfs(i);
     }
-    cout<<endl;
-}
+ }
 int main()
 {
 
@@ -31,7 +30,10 @@ int main()
 
     for(i=0;i<n;i++)
         if(arr[i]==0)
+        {
             dfs(i);
+            cout<<endl;
+        }    
 
     return 0;
 }
