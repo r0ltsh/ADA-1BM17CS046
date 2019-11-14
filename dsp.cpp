@@ -20,7 +20,9 @@ int main()
         vis[j]=0;
     vis[src]=1;
     dist[src]=0;
-    prev[src]=src;
+    for(j=1;j<n;j++)
+        prev[j]=src;
+    
     count=1;
     while(count!=n)
     {
@@ -53,7 +55,7 @@ int main()
             cout<<"path :"<<i<<"  ";
             do
             {
-               cout<<"<-"<<prev[j];
+               cout<<"<-"<<prev[j]<<"<-";
                j=prev[j];
             }while(prev[j]!=src); 
             cout<<src<<" "<<endl; 
